@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.doctoresDataSet = new InterfazDoctores.DoctoresDataSet();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.doctoresDataSet = new InterfazDoctores.DoctoresDataSet();
-            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.doctorTableAdapter = new InterfazDoctores.DoctoresDataSetTableAdapters.doctorTableAdapter();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -51,8 +51,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.doctoresDataSet)).BeginInit();
+            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctoresDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -71,6 +72,16 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(199, 20);
             this.textBox1.TabIndex = 1;
+            // 
+            // doctorBindingSource
+            // 
+            this.doctorBindingSource.DataMember = "doctor";
+            this.doctorBindingSource.DataSource = this.doctoresDataSet;
+            // 
+            // doctoresDataSet
+            // 
+            this.doctoresDataSet.DataSetName = "DoctoresDataSet";
+            this.doctoresDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -118,16 +129,6 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 6;
-            // 
-            // doctoresDataSet
-            // 
-            this.doctoresDataSet.DataSetName = "DoctoresDataSet";
-            this.doctoresDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // doctorBindingSource
-            // 
-            this.doctorBindingSource.DataMember = "doctor";
-            this.doctorBindingSource.DataSource = this.doctoresDataSet;
             // 
             // doctorTableAdapter
             // 
@@ -235,11 +236,22 @@
             this.textBox8.Size = new System.Drawing.Size(199, 20);
             this.textBox8.TabIndex = 18;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(556, 130);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 19;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(850, 430);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.textBox8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -262,8 +274,8 @@
             this.Name = "Form1";
             this.Text = "Doctores";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.doctoresDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctoresDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,6 +305,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.Button button5;
     }
 }
 

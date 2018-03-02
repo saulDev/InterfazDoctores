@@ -75,5 +75,16 @@ namespace InterfazDoctores
             int current = doctorBindingSource.Position + 1;
             textBox2.Text = current.ToString() + " / " + this.total.ToString();
         }
+
+        private void get_value()
+        {
+            DoctoresDataSet.doctorRow[] doctors = doctoresDataSet.doctor.ToArray();
+            textBox2.Text = doctors[0].TURNO;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            this.get_value();
+        }
     }
 }
