@@ -16,6 +16,7 @@ namespace InterfazDoctores
         public Form1()
         {
             InitializeComponent();
+            SetStyle(ControlStyles.SupportsTransparentBackColor, true);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -76,15 +77,29 @@ namespace InterfazDoctores
             textBox2.Text = current.ToString() + " / " + this.total.ToString();
         }
 
-        private void get_value()
+
+
+
+        private void show_room()
         {
             DoctoresDataSet.doctorRow[] doctors = doctoresDataSet.doctor.ToArray();
-            textBox2.Text = doctors[0].TURNO;
+            string no_room = textBox2.Text = doctors[0].N_CONSUL;
+
+            switch (no_room)
+            {
+                case "1":
+                    label8.Visible = true;
+                    pictureBox2.Visible = true;
+                    break;
+            }
+            
         }
+
+        private 
 
         private void button5_Click(object sender, EventArgs e)
         {
-            this.get_value();
+            this.show_room();
         }
     }
 }
